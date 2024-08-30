@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lista-film',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ListaFilmComponent {
 
+  @Input() movies: any[] = [];
+
+  getMoviePoster(path: string): string {
+
+    return `https://image.tmdb.org/t/p/w500${path}`;
+    
+    }
 }
