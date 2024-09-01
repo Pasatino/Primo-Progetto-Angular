@@ -1,4 +1,5 @@
 
+<app-search-bar (moviesFound)="updateMovieList($event)"></app-search-bar>
 
 <mat-card *ngFor="let movie of movies" class="example-card">
     <a [routerLink]="['/movie', movie.id]">Link</a>
@@ -13,6 +14,8 @@
 
 
         <p>Punteggio: {{ movie.vote_average }}</p>
+
+        <p>Generi: {{ getGenreNames(movie.genre_ids) }}</p>
 
     </mat-card-content>
 

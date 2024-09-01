@@ -1,0 +1,19 @@
+<div>
+    <mat-form-field appearance="fill">
+      <mat-label>Ricerca per titolo</mat-label>
+      <input matInput (keyup)="onSearch()" [(ngModel)]="searchQuery" placeholder="Cerca un film">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Genere</mat-label>
+      <mat-select [(ngModel)]="selectedGenre" (selectionChange)="onSearch()">
+        <!-- Opzione "Tutte" -->
+        <mat-option [value]="null">Tutte</mat-option>
+        <mat-option *ngFor="let genre of genres" [value]="genre.id">
+          {{ genre.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  

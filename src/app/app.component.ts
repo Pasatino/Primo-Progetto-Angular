@@ -36,4 +36,7 @@ export class AppComponent implements OnInit {
       }
     );
   }
+  updateMovieList(movies: any[]): void {
+    this.movies = movies;
+  }
 }

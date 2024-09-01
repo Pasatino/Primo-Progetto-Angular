@@ -13,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -21,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     ListaFilmComponent,
     DettagliFilmComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatSelectModule,
     MatIconModule,
+    FormsModule,
     
 
   ],
