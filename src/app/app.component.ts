@@ -12,10 +12,24 @@ export class AppComponent implements OnInit {
   constructor(private tmdbService: TmdbService) {}
 
   ngOnInit(): void {
-    this.tmdbService.searchMovies('Inception').subscribe(
+    // Scopri i film popolari, caricando le prime due pagine
+    this.tmdbService.discoverMovies(1).subscribe(
       (data) => {
         this.movies = data.results;
-        console.log(this.movies); // Verifica che i dati siano presenti
+        console.log('Prima pagina di film:', this.movies);
+        this.loadMoreMovies(); // Carica la seconda pagina
+      },
+      (error) => {
+        console.error('Errore API:', error);
+      }
+    );
+  }
+
+  loadMoreMovies(): void {
+    this.tmdbService.discoverMovies(2).subscribe(
+      (data) => {
+        this.movies = [...this.movies, ...data.results]; // Aggiunge i film della seconda pagina
+        console.log('Film dopo due pagine:', this.movies);
       },
       (error) => {
         console.error('Errore API:', error);

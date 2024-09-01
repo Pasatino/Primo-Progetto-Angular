@@ -1,20 +1,18 @@
 
 
 <mat-card *ngFor="let movie of movies" class="example-card">
-
-    <!-- <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header> -->
-
+    <a [routerLink]="['/movie', movie.id]">Link</a>
     <img mat-card-image [src]="getMoviePoster(movie.poster_path)" alt="{{ movie.title }}">
+
+    
 
     <mat-card-content>
         <h2>{{ movie.title }}</h2>
 
         <p>Anno: {{ movie.release_date }}</p>
 
+
         <p>Punteggio: {{ movie.vote_average }}</p>
+
     </mat-card-content>
 

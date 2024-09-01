@@ -1,0 +1,8 @@
+<div *ngIf="movie">
+    <h1>{{ movie.title }}</h1>
+    <img [src]="getMoviePoster(movie.poster_path)" alt="{{ movie.title }}">
+    <p>{{ movie.overview }}</p>
+    <p><strong>Anno di rilascio:</strong> {{ movie.release_date }}</p>
+    <p><strong>Punteggio:</strong> {{ movie.vote_average }}</p>
+    <p><strong>Durata:</strong> {{ movie.runtime }} minuti</p>
+</div>

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaFilmComponent } from './components/lista-film/lista-film.component';
+import { DettagliFilmComponent } from './components/dettagli-film/dettagli-film.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 
@@ -14,10 +15,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    ListaFilmComponent
+    ListaFilmComponent,
+    DettagliFilmComponent,
   ],
   imports: [
     BrowserModule,
