@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ListaFilmComponent,
     DettagliFilmComponent,
-    SearchBarComponent
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +36,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatIconModule,
     FormsModule,
+    NgxPaginationModule,
+
     
 
   ],

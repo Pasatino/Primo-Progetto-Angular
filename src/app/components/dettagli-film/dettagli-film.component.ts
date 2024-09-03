@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../services/tmdb.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class DettagliFilmComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
-    private tmdbService: TmdbService
+    private tmdbService: TmdbService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class DettagliFilmComponent implements OnInit{
   }
   getMoviePoster(path: string): string {
     return path ? `https://image.tmdb.org/t/p/w500${path}` : 'path/to/fallback-image.jpg';
+  }
+
+  goBack(): void {
+    this.location.back();
   }
   
 }

@@ -8,8 +8,9 @@ import { TmdbService } from '../../services/tmdb.service';
 })
 export class ListaFilmComponent implements OnInit{
 
-  @Input() movies: any[] = [];
+  movies: any[] = [];
   genres: any[] = []; // Array per memorizzare i generi
+  p: number = 1;  // Variabile per tenere traccia della pagina corrente
   
   constructor(private tmdbService: TmdbService) {}
 
@@ -47,7 +48,7 @@ export class ListaFilmComponent implements OnInit{
 
 
   getMoviePoster(path: string): string {
-    return path ? `https://image.tmdb.org/t/p/w500${path}` : 'assets/img-not-available.png';
+    return `https://image.tmdb.org/t/p/w500${path}`;
   }
   
 }
