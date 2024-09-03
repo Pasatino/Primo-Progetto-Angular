@@ -6,39 +6,9 @@
     </div>
 </div>
 
-
-
-
-
-<!-- <div class="container">
-    <div class="row">
-
-
-            <mat-card *ngFor="let movie of movies" class="example-card">
-                <a [routerLink]="['/movie', movie.id]">Link</a>
-                <img mat-card-image [src]="getMoviePoster(movie.poster_path)" alt="{{ movie.title }}">
-            
-            
-                <mat-card-content>
-                    <h2>{{ movie.title }}</h2>
-            
-                    <p>Anno: {{ movie.release_date }}</p>
-            
-            
-                    <p>Punteggio: {{ movie.vote_average }}</p>
-            
-                    <p>Generi: {{ getGenreNames(movie.genre_ids) }}</p>
-            
-                </mat-card-content>
-
-            </mat-card>
-
-    </div>
-</div> -->
-
 <div class="container mt-4">
     <div class="row d-flex flex-wrap">
-      <div class="col-md-3 mb-4 d-flex align-items-stretch" *ngFor="let movie of movies">
+      <div class="col-md-3 mb-4 d-flex align-items-stretch" *ngFor="let movie of movies | paginate: { itemsPerPage: 12, currentPage: p }">
         <div class="card w-100 d-flex flex-column">
           <img [src]="getMoviePoster(movie.poster_path)" class="card-img-top" alt="{{ movie.title }}">
           <div class="card-body d-flex flex-column">
@@ -50,6 +20,7 @@
         </div>
       </div>
     </div>
+    
 
   
   
